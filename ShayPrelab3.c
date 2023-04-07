@@ -28,7 +28,7 @@ void displayTime(long unsigned int inTime);
 void displayTemp(float inAvgTempC);
 
 
-// TIMER FUNCTIONS
+// DATE & TIMER FUNCTIONS
 void S1toS4toLEDs(void);
 void swDelay(char numLoops);
 void startingA2Timer(void);
@@ -42,6 +42,7 @@ volatile unsigned long timer = 0;
 unsigned long start_time = 0;
 unsigned long current_time = 0;
 unsigned long elapsed_time = 0;
+unsigned char months[12] = {'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV, 'DEC'};
 char button_state;
 char timer_on;
 int sec;
@@ -49,6 +50,7 @@ int min;
 int hour;
 int day;
 int month;
+int daysInMonth;
 int total_dec;
 int total_sec;
 
@@ -445,20 +447,6 @@ void displayTime(long unsigned int inTime){ // for prelab3
      hour = total_sec / 3600; // Hours
      min = total_sec / 60; // Minutes
      sec = total_sec % 60; // Seconds
-
-     // month strings
-     unsigned char jan[4] = "JAN ";
-     unsigned char feb[4] = "FEB ";
-     unsigned char mar[4] = "MAR ";
-     unsigned char apr[4] = "APR ";
-     unsigned char may[4] = "MAY ";
-     unsigned char jun[4] = "JUN ";
-     unsigned char jul[4] = "JUL ";
-     unsigned char aug[4] = "AUG ";
-     unsigned char sep[4] = "SEP ";
-     unsigned char oct[4] = "OCT ";
-     unsigned char nov[4] = "NOV ";
-     unsigned char dec[4] = "DEC ";
 
      
      //Graphics_drawStringCentered(&g_sContext, str, 9, 48, 15, OPAQUE_TEXT);
