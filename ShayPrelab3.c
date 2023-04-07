@@ -482,5 +482,5 @@ void daysInTheMonth(char inputMonth){
 
 void convertingTheTemp (int inputTemperature) {
      farenheight = (inputTemperature * 9/5) + 32;
-     celcius = (farenheight - 32) * (5/9);
+     celcius = inputTemperature;
 }
