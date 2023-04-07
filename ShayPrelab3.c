@@ -44,7 +44,7 @@ volatile unsigned long timer = 0;
 unsigned long start_time = 0;
 unsigned long current_time = 0;
 unsigned long elapsed_time = 0;
-unsigned char months[12] = {'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'};
+unsigned char months[12] = {'JAN ', 'FEB ', 'MAR ', 'APR ', 'MAY ', 'JUN ', 'JUL ', 'AUG ', 'SEP ', 'OCT ', 'NOV ', 'DEC '};
 char button_state;
 char timer_on;
 int sec;
@@ -469,13 +469,13 @@ void displayTemp(float inAvgTempC) {
 }
 
 void daysInTheMonth(char inputMonth){
-     if (inputMonth == 'JAN' | 'MAR' | 'MAY' | 'JUL' | 'AUG' | 'OCT' | 'DEC') {
+     if (inputMonth == 'JAN ' | 'MAR ' | 'MAY ' | 'JUL ' | 'AUG ' | 'OCT ' | 'DEC ') {
             daysInMonth = 31;
      } 
-     else if (inputMonth == 'APR' | 'JUN' | 'SEP' | 'NOV' ) {
+     else if (inputMonth == 'APR ' | 'JUN ' | 'SEP ' | 'NOV ' ) {
             daysInMonth = 30;
      }
-     else if (inputMonth == 'FEB') {
+     else if (inputMonth == 'FEB ') {
             daysInMonth = 28;
      }
 }
