@@ -27,6 +27,7 @@ int ledDecimal(int binaryInput);
 void displayTime(long unsigned int inTime);
 void displayTemp(float inAvgTempC);
 void daysInTheMonth(char inputMonth);
+void convertingTheTemp (int inputTemperature);
 
 
 // DATE & TIMER FUNCTIONS
@@ -54,6 +55,8 @@ int month;
 int daysInMonth;
 int total_dec;
 int total_sec;
+int celcius;
+int farenheight;
 
 #pragma vector=TIMER2_A0_VECTOR
 __interrupt void TimerA2_ISR(void)
@@ -477,3 +480,7 @@ void daysInTheMonth(char inputMonth){
      }
 }
 
+void convertingTheTemp (int inputTemperature) {
+     farenheight = (inputTemperature * 9/5) + 32;
+     celcius = (farenheight - 32) * (5/9);
+}
