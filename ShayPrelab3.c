@@ -445,6 +445,21 @@ void displayTime(long unsigned int inTime){ // for prelab3
      hour = total_sec / 3600; // Hours
      min = total_sec / 60; // Minutes
      sec = total_sec % 60; // Seconds
+
+     // month strings
+     unsigned char jan[4] = "JAN ";
+     unsigned char feb[4] = "FEB ";
+     unsigned char mar[4] = "MAR ";
+     unsigned char apr[4] = "APR ";
+     unsigned char may[4] = "MAY ";
+     unsigned char jun[4] = "JUN ";
+     unsigned char jul[4] = "JUL ";
+     unsigned char aug[4] = "AUG ";
+     unsigned char sep[4] = "SEP ";
+     unsigned char oct[4] = "OCT ";
+     unsigned char nov[4] = "NOV ";
+     unsigned char dec[4] = "DEC ";
+
      
      //Graphics_drawStringCentered(&g_sContext, str, 9, 48, 15, OPAQUE_TEXT);
      //unsigned char str[9]; // mm:ss.hh = 8 chars + null terminator
