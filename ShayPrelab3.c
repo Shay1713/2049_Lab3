@@ -30,31 +30,18 @@ void displayTime(long unsigned int inTime){ // needs to be always running in mai
 
 }
 
-void displayTemp(float inAvgTempC, float inAvgTempF, long unsigned int inTime){
-    
-    // actual averages done in another function, hence why they are parameter values
-    // get average for tempC
-    tempCTotal = inAvgTempC + tempCTotal; // make sure tempC and tempF Totals set to 0 globally initally
-    tempFTotal = inAvgTempF + tempFTotal;
-    // get average for tempF
-    tempCAverage = tempCTotal / arrayIndex; // used as tempC parameter for displayOnLCD
-    tempFAverage = tempFTotal / arrayIndex; // used as tempF parameter for displayOnLCD
-    arrayIndex++; // have to divide by one more each time
-    
-    usnprintf(strTEMPC, 9, "%0.1f C\n", tempCAverage);
-    usnprintf(strTEMPF, 9, "%0.1f F\n", tempFAverage);
-    
+void displayTemp(float inAvgTempC, float inAvgTempF, long unsigned int 
     // for display purposes
     second  = inTime/100;
     secondMod = second % 60;
     count = secondMod % 11;
     
     if ((count>=6) && (count <=8)){
-        Graphics_drawStringCentered(&g_sContext, strTEMPC, 9, 48, 15, OPAQUE_TEXT);
+        Graphics_drawStringCentered(&g_sContext, inAvgTempC, 9, 48, 15, OPAQUE_TEXT);
         Graphics_flushBuffer(&g_sContext);
     }
     if ((count>=9) && (count <=11)) {
-        Graphics_drawStringCentered(&g_sContext, strTEMPF, 9, 48, 15, OPAQUE_TEXT);
+        Graphics_drawStringCentered(&g_sContext, inAvgTempF, 9, 48, 15, OPAQUE_TEXT);
         Graphics_flushBuffer(&g_sContext);
     }
 
