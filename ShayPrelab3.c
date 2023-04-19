@@ -30,7 +30,7 @@ void displayTime(long unsigned int inTime){ // needs to be always running in mai
 
 }
 
-void displayTemp(float inAvgTempC, float inAvgTempF, long unsigned int 
+void displayTemp(float inAvgTempC, float inAvgTempF, long unsigned int inTime){
     // for display purposes
     second  = inTime/100;
     secondMod = second % 60;
